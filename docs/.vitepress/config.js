@@ -8,13 +8,11 @@ export default {
       { text: 'Home', link: '/' },
       { text: 'Notes', link: '/note' }
     ],
-    themeConfig: {
-        outline: {
-      	    level: [1, 3], // 显示 h1 到 h3，默认是 [2, 3]
-            label: 'On this page' // 大纲标题
-        }
-     }
-
+    outline: {
+      level: [1, 3], // 显示 h1 到 h3，默认是 [2, 3]
+      label: 'On this page' // 大纲标题
+    }
+     
     sidebar: [
       {
         text: 'Guide',
