@@ -1,5 +1,5 @@
 export default {
-  title: 'lorixyu's blog',
+  title: 'lorixyu\'s blog',
   titleTemplate: false,
   description: 'A personal blog powered by VitePress',
 
