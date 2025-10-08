@@ -19,4 +19,8 @@ export default {
     ]
   }
 }
-
+export default {
+  title: 'lorixyu's blog', // 这里设置你想要的固定标题
+  titleTemplate: false, // 关键：设置为 false 可以禁用标题模板
+  // 其他配置...
+}
