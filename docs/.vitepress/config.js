@@ -9,10 +9,10 @@ export default {
       { text: 'Notes', link: '/note' }
     ],
     outline: {
-      level: [1, 3], // 显示 h1 到 h3，默认是 [2, 3]
-      label: 'On this page' // 大纲标题
-    },	
-     
+      level: [1, 3],
+      label: 'On this page'
+    },  // ← 加上这个逗号！！！
+
     sidebar: [
       {
         text: 'Guide',
