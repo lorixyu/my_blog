@@ -3,6 +3,11 @@ export default {
   description: "A personal blog powered by VitePress",
 
   themeConfig: {
+    outline: {
+      level: [1, 4],
+      label: 'On this page'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Notes', link: '/note' }
