@@ -1,4 +1,4 @@
-# myfunction实现
+# function介绍
 
 ## C++ 中的 `std::function` 全面解析
 
@@ -52,7 +52,7 @@ std::cout << add(2, 3);  // 输出 5
 
 例如：
 
-```
+```c++
 int add(int a, int b) { return a + b; }
 
 std::function<int(int,int)> f1 = add;       // ok
@@ -80,7 +80,7 @@ std::function<int(int,int)> f2 = [](int a, int b){ return a - b; }; // ok
 
 #### 1. 存储普通函数
 
-```
+```c++
 int add(int a, int b) { return a + b; }
 std::function<int(int,int)> func = add;
 std::cout << func(2, 3);
@@ -88,14 +88,14 @@ std::cout << func(2, 3);
 
 #### 2. 存储 lambda 表达式
 
-```
+```c++
 std::function<void()> f = [](){ std::cout << "Hello lambda\n"; };
 f();
 ```
 
 #### 3. 存储仿函数
 
-```
+```c++
 struct Print {
     void operator()(const std::string& s) const {
         std::cout << s << std::endl;
@@ -107,7 +107,7 @@ f("Hello functor");
 
 #### 4. 与 `std::bind` 配合
 
-```
+```c++
 #include <functional>
 
 void greet(const std::string& name, int age) {
@@ -127,7 +127,7 @@ f();  // Hi Tom, age 18
 
 2. 若未赋值，`std::function` 是空的：
 
-   ```
+   ```c++
    std::function<void()> f;
    if (!f) std::cout << "empty\n";
    ```
@@ -155,3 +155,50 @@ f();  // Hi Tom, age 18
  ✅ 可组合
 
 它体现了 **C++ 从面向对象到泛型与函数式编程的演进**。
+
+# myfunction实现
+
+> 该实现的底层使用的还是函数指针
+>
+> Std::function的底层实现是**类型擦除** + **多态封装** + **小对象优化**实现的。
+
+```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void func(string str) {
+    cout << str << endl;
+}
+
+// 前置声明
+template <typename Fty>
+class myfunction {};
+
+template <typename R, typename A1>
+class myfunction<R(A1)> {
+public:
+    using pFunc = R (*)(A1); // 底层依旧是使用函数指针
+
+    // Constructor
+    myfunction(pFunc func) : _pfunc(func) {}
+
+    // Operator() overload
+    R operator()(A1 arg) {
+        return _pfunc(arg);
+    }
+
+private:
+    pFunc _pfunc;
+};
+
+int main() {
+    myfunction<void(string)> pfunc = func;
+
+    pfunc("hello world");
+
+    return 0;
+}
+```
+

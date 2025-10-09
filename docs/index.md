@@ -2,7 +2,7 @@
 layout: home
 title: LorixYu's Blog
 ---
-# 👋 Hi, I'm LorixYu
+# 👋 Hi, I'm Lorixyu
 
 ***Welcome to my personal blog!***  
 I'm a CS student at **XAUFE**. 
