@@ -19,6 +19,7 @@ export default {
         items: [
           { text: 'Home', link: '/' },
           { text: 'My Note', link: '/note' }
+	  { text: '实现myfunction', link: '/function' }
         ]
       }
     ]
