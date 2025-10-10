@@ -24,8 +24,8 @@ export default {
             collapsed: true,    // 折叠
             items: [
               { text: 'My Note', link: '/note' },
-              { text: '实现myfunction', link: '/function' }
-	      { text: '实现mybind1st‘, link: '/bind1st' }
+              { text: '实现myfunction', link: '/function' },
+	      { text: '实现mybind1st‘, link: '/bind1st' },
             ]
           }
         ]
