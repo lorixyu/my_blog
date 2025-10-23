@@ -1,5 +1,5 @@
 export default {
-  title: "LorixYu's Blog",
+  title: "Lorixyu's Blog",
   description: "A personal blog powered by VitePress",
 
   themeConfig: {
@@ -25,7 +25,8 @@ export default {
             items: [
               { text: 'My Note', link: '/note' },
               { text: '实现myfunction', link: '/function' },
-	      { text: '实现mybind1st', link: '/bind1st' }
+	          { text: '实现mybind1st', link: '/bind1st' },
+              { text: '快速排序详解', link: '/快速排序'}
             ]
           }
         ]
