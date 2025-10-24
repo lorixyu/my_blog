@@ -27,7 +27,8 @@ export default {
               { text: '实现myfunction', link: '/function' },
 	          { text: '实现mybind1st', link: '/bind1st' },
               { text: '快速排序详解', link: '/快速排序'}
-            ]
+              { text: '归并排序详解', link: '/归并排序'}
+          ]
           }
         ]
       }
